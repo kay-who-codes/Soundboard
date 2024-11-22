@@ -4,5 +4,9 @@ document.querySelectorAll('.sound-button').forEach(button => {
     const soundName = button.getAttribute('data-sound');
     const audio = new Audio(`sounds/${soundName}.mp3`);
     audio.play();
+
+    // Add flash animation
+    button.classList.add('flash');
+    setTimeout(() => button.classList.remove('flash'), 300); // Remove class after animation
   });
 });
