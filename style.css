@@ -16,17 +16,18 @@ h1 {
 /* Soundboard grid */
 .soundboard {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Always three buttons per row */
+  grid-template-columns: repeat(3, 1fr); /* Three equal columns */
   gap: 15px; /* Space between buttons */
-  max-width: 1200px; /* Limit grid width for desktops */
+  max-width: 1200px; /* Limit grid width */
   margin: 0 auto; /* Centre the grid */
   padding: 15px;
-  justify-content: center; /* Center align grid content */
+  justify-items: center; /* Centre buttons in each column */
 }
 
 /* Button styles */
 .sound-button {
-  width: 100%; /* Fit within the grid cell */
+  width: 100%; /* Default width for responsive adjustment */
+  max-width: 350px; /* Maximum button width for desktop */
   height: 120px; /* Fixed height */
   background-color: #ffffff; /* White background */
   border: 2px solid #000000; /* Black border */
@@ -59,15 +60,14 @@ h1 {
   transition: background-color 0.3s ease;
 }
 
-/* Mobile and smaller screens */
+/* Mobile adjustments */
 @media (max-width: 768px) {
   .soundboard {
-    grid-template-columns: repeat(3, 1fr); /* Maintain three buttons per row */
-    gap: 15px; /* Consistent spacing */
+    grid-template-columns: repeat(3, 1fr); /* Keep three buttons per row */
   }
 
   .sound-button {
-    height: 100px; /* Slightly smaller buttons for smaller screens */
+    height: 100px; /* Slightly smaller buttons */
   }
 }
 
