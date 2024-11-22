@@ -4,36 +4,59 @@ body {
   margin: 0;
   padding: 0;
   text-align: center;
-  background-color: #f4f4f4;
-  color: #333;
+  background-color: #ffffff;
+  color: #000000;
 }
 
 h1 {
   margin: 20px 0;
+  font-size: 24px;
 }
 
 /* Soundboard grid */
 .soundboard {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 10px;
+  grid-template-columns: repeat(3, 1fr); /* Three columns */
+  gap: 20px; /* Add spacing between buttons */
+  max-width: 400px; /* Set max width for the grid */
+  margin: 0 auto; /* Center the grid */
+  padding: 20px;
 }
 
 /* Button styles */
 .sound-button {
-  padding: 20px;
+  background-color: #ffffff; /* White background */
+  border: 2px solid #000000; /* Black border */
+  border-radius: 15px; /* Rounded corners */
+  padding: 30px 0; /* Increase padding for height */
   font-size: 18px;
-  border: none;
-  border-radius: 10px;
-  background-color: #007BFF;
-  color: white;
+  font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Add subtle shadow */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .sound-button:hover {
-  background-color: #0056b3;
+  transform: scale(1.05); /* Slight zoom on hover */
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
+}
+
+.sound-button:active {
+  transform: scale(0.95); /* Slight press effect */
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Reduce shadow when pressed */
+}
+
+/* Flash animation */
+@keyframes flash {
+  0% {
+    background-color: #F68E8E; /* Red flash */
+  }
+  100% {
+    background-color: #ffffff; /* Fade back to white */
+  }
+}
+
+/* Add animation class */
+.sound-button.flash {
+  animation: flash 0.3s ease; /* Flash duration: 0.3s */
 }
