@@ -16,11 +16,12 @@ h1 {
 /* Soundboard grid */
 .soundboard {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Three equal columns */
-  gap: 20px; /* Space between buttons */
-  max-width: 500px; /* Limit grid width */
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Flexible grid for responsive layout */
+  gap: 15px; /* Space between buttons and edges */
+  max-width: 1200px; /* Limit grid width for desktops */
   margin: 0 auto; /* Centre the grid */
-  padding: 20px;
+  padding: 15px;
+  box-sizing: border-box; /* Include padding in dimensions */
 }
 
 /* Button styles */
@@ -30,27 +31,45 @@ h1 {
   background-color: #ffffff; /* White background */
   border: 2px solid #000000; /* Black border */
   border-radius: 20px; /* Rounded corners */
-  font-size: 20px;
+  font-size: 1.2rem; /* Responsive text size */
   font-weight: bold;
   cursor: pointer;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease;
   display: flex;
   align-items: center; /* Vertically centre text */
   justify-content: center; /* Horizontally centre text */
 }
 
+/* Button hover effect */
 .sound-button:hover {
   transform: scale(1.05); /* Slight zoom on hover */
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3); /* Enhance shadow */
 }
 
+/* Button active (click) effect */
 .sound-button:active {
   transform: scale(0.95); /* Slight press effect */
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Reduced shadow */
 }
 
+/* Flash effect */
 .sound-button.flash {
-  background-color: #f68e8e;
+  background-color: #f68e8e; /* Red flash */
   transition: background-color 0.3s ease;
+}
+
+/* Mobile and smaller screens (three buttons per row) */
+@media (max-width: 768px) {
+  .soundboard {
+    grid-template-columns: repeat(3, 1fr); /* Always 3 buttons per row */
+  }
+}
+
+/* Larger screens (fixed button size) */
+@media (min-width: 768px) {
+  .sound-button {
+    width: 350px;
+    height: 350px; /* Fixed size for desktop */
+  }
 }
