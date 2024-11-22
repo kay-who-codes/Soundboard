@@ -1,6 +1,9 @@
 // Reference to the soundboard container
 const soundboard = document.getElementById("soundboard");
 
+// Store a reference to the currently playing audio
+let currentAudio = null;
+
 // Function to convert file names to Title Case (e.g., "airhorn.mp3" -> "Airhorn")
 const toTitleCase = (str) => {
   return str
@@ -23,12 +26,25 @@ fetch("sounds.json")
 
       // Add click event to play the corresponding sound
       button.addEventListener("click", () => {
+        // Stop the currently playing sound (if any)
+        if (currentAudio) {
+          currentAudio.pause();
+          currentAudio.currentTime = 0; // Reset to the beginning
+        }
+
+        // Create and play the new audio
         const audio = new Audio(`sounds/${file}`);
+        currentAudio = audio; // Update the reference to the current audio
         audio.play();
 
         // Add flash effect
         button.classList.add("flash");
         setTimeout(() => button.classList.remove("flash"), 300);
+
+        // Remove flash effect when the audio ends
+        audio.addEventListener("ended", () => {
+          button.classList.remove("flash");
+        });
       });
     });
   })
