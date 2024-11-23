@@ -9,13 +9,13 @@ body {
 }
 
 h1 {
-  margin: 20px 0;
-  font-size: 24px;
+  margin: 20px 0 30px;  /* ADDED: 3rd value */
+  font-size: 30px;
 }
 
 h2 {
-  margin: 20px 0 10px;
-  font-size: 20px;
+  margin: 30px 0 20px;
+  font-size: 22px;
 }
 
 /* Soundboard grid */
@@ -23,40 +23,40 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 auto;
-  padding: 20px;
+  margin: 0 auto;  /* CHANGED from 0 auto */
+  padding: 20px 20px 30px; /* ADDED: 2nd & 3rd values */
 }
 
 .category-container {
   display: grid;
-  grid-gap: 20px; /* Space between buttons */
-  margin-bottom: 30px;
+  grid-gap: 20px; /* Ensure 20px space between buttons */
+  margin-bottom: 50px; /* Already at 50px */
   justify-content: center;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Flexible grid for mobile and desktop */
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Flexible layout */
 }
 
 @media (max-width: 768px) {
   .category-container {
     grid-template-columns: repeat(3, 1fr); /* 3 buttons per row on mobile */
-    padding: 4 11px; /* Small padding between buttons and screen edge */
+    padding: 0 5px; /* 5px space between buttons and screen edge */
   }
   .sound-button {
     width: 100%;
-    height: 100%;
-    max-width: 150px; /* Max width for buttons on mobile */
+    max-width: 150px;
+    height: 115%;
     margin: 0 auto;
   }
 }
 
 @media (min-width: 769px) {
   .category-container {
-    grid-template-columns: repeat(5, 1fr); /* 5 buttons per row on desktop */
-    padding: 0 50px; /* Add space at the sides for desktop */
-    justify-items: center; /* Center buttons horizontally */
-    grid-gap: 18px; /* Reduced gap between buttons */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* 200px buttons with flexible centring */
+    padding: 0 50px; /* Allow sufficient horizontal padding for centring */
+    justify-items: center; /* Centre buttons horizontally */
+    grid-gap: 20px; /* Ensure 20px space between buttons */
   }
   .sound-button {
-    width: 200px; /* Fixed size of 200px for desktop */
+    width: 200px; /* Fixed size for desktop */
     height: 200px;
   }
 }
