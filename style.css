@@ -13,62 +13,80 @@ h1 {
   font-size: 24px;
 }
 
+h2 {
+  margin: 20px 0 10px;
+  font-size: 20px;
+}
+
 /* Soundboard grid */
-#soundboard {
+.soundboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.category-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Three columns */
-  gap: 15px; /* Space between buttons */
-  max-width: 1200px; /* Limit grid width */
-  margin: 0 auto; /* Centre the grid */
-  padding: 15px;
-  justify-content: center; /* Centre the entire grid content */
-  justify-items: center; /* Centre buttons inside each grid cell */
+  grid-gap: 20px; /* Space between buttons */
+  margin-bottom: 30px;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Flexible grid for mobile and desktop */
+}
+
+@media (max-width: 768px) {
+  .category-container {
+    grid-template-columns: repeat(3, 1fr); /* 3 buttons per row on mobile */
+    padding: 4 11px; /* Small padding between buttons and screen edge */
+  }
+  .sound-button {
+    width: 100%;
+    height: 100%;
+    max-width: 150px; /* Max width for buttons on mobile */
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 769px) {
+  .category-container {
+    grid-template-columns: repeat(5, 1fr); /* 5 buttons per row on desktop */
+    padding: 0 50px; /* Add space at the sides for desktop */
+    justify-items: center; /* Center buttons horizontally */
+    grid-gap: 18px; /* Reduced gap between buttons */
+  }
+  .sound-button {
+    width: 200px; /* Fixed size of 200px for desktop */
+    height: 200px;
+  }
 }
 
 /* Button styles */
 .sound-button {
-  width: 100%; /* Full width of the grid cell */
-  max-width: 350px; /* Max button width for larger screens */
-  height: 100px; /* Fixed height for all buttons */
   background-color: #ffffff; /* White background */
   border: 2px solid #000000; /* Black border */
-  border-radius: 15px; /* Rounded corners */
-  font-size: 18px;
+  border-radius: 10px; /* Rounded corners */
+  font-size: 14px;
   font-weight: bold;
   cursor: pointer;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
   display: flex;
-  align-items: center; /* Vertically centre text */
-  justify-content: center; /* Horizontally centre text */
-  text-align: center;
+  align-items: center; /* Vertically center text */
+  justify-content: center; /* Horizontally center text */
 }
 
-/* Button hover effect */
 .sound-button:hover {
   transform: scale(1.05); /* Slight zoom on hover */
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3); /* Enhance shadow */
 }
 
-/* Button active (click) effect */
 .sound-button:active {
   transform: scale(0.95); /* Slight press effect */
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Reduced shadow */
 }
 
-/* Flash effect */
 .sound-button.flash {
-  background-color: #f68e8e; /* Red flash */
+  background-color: lightgreen;
   transition: background-color 0.3s ease;
-}
-
-/* Responsive adjustments for smaller screens */
-@media (max-width: 768px) {
-  #soundboard {
-    grid-template-columns: repeat(3, 1fr); /* Ensure three buttons per row */
-  }
-
-  .sound-button {
-    height: 90px; /* Slightly smaller buttons on mobile */
-  }
 }
