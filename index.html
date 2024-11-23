@@ -7,12 +7,32 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Header Bar -->
+  <header class="header-bar">
+    <a href="https://kay-who-codes.github.io/Soundboard/" class="header-link">Kay's Soundboard</a>
+    <div class="dropdown">
+      <button class="dropbtn" onclick="toggleDropdown()">More Apps</button>
+      <div class="dropdown-content">
+        <a href="https://kay-who-codes.github.io/Misanthrocards/">Misanthrocards</a>
+        <a href="https://github.com/kay-who-codes/coinflip">Coinflip</a>
+      </div>
+    </div>
+  </header>
+
   <h1>🔊 Pick a Sound! 🔊</h1>
   <div id="soundboard" class="grid-container"></div>
+
+  <!-- Dark Mode/Light Mode Toggle -->
+  <div class="theme-toggle">
+    <label for="themeSwitch">🌞 Light Mode</label>
+    <input type="checkbox" id="themeSwitch">
+    <label for="themeSwitch">🌙 Dark Mode</label>
+  </div>
+
   <script src="script.js"></script>
 </body>
+
 <footer>
   Made by <a href="https://linktr.ee/kaywhocreates" target="_blank" rel="noopener noreferrer">Kay 🧡</a>
 </footer>
-
 </html>
