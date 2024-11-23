@@ -50,7 +50,7 @@ h2 {
 .category-container {
   display: grid;
   grid-gap: 10px; /* Reduced gap for iOS/mobile */
-  margin-bottom: 50px;
+  margin-bottom: 65px;
   justify-content: center;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Flexible layout */
 }
