@@ -12,12 +12,118 @@ body.dark-mode {
   --background-color: #090909;
   --text-color: #ffffff;
   --button-color: #1b1b1b;
-  --button-outline-color: #737373; /* Grey outline in dark mode */
+  --button-outline-color: #737373;
   --button-text-color: #ffffff;
   --flash-color: #737373;
 }
 
 /* General Styles */
+
+/* Header Bar Styles */
+.header-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Ensure it stays on top */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.header-link {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.header-link:hover {
+  text-decoration: underline;
+}
+
+/* Dropdown Menu Styles */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  font-size: 12px;
+  font-family: Arial, sans-serif;
+  background-color: var(--button-color);
+  border: 2px solid var(--button-outline-color);
+  color: var(--button-text-color);
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.dropbtn:hover {
+  background-color: var(--button-outline-color);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--background-color);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  right: 0;
+  left: auto;
+}
+
+.dropdown-content a {
+  color: var(--text-color);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: 12px;
+  width: 100%; /* Ensure links take up full width of dropdown */
+}
+
+.dropdown-content a:hover {
+  color: blue; /* Change text color to blue instead of background turning black */
+}
+
+/* Mobile Dropdown Toggle */
+@media (max-width: 768px) {
+  .dropdown-content {
+    position: relative; /* Ensure it doesn't get cut off on mobile */
+  }
+}
+
+/* Dropdown Menu Visibility on Toggle */
+.dropdown.open .dropdown-content {
+  display: block;
+}
+
+/* Adjust the layout so the header stays on top */
+body {
+  margin-top: 60px; /* Add space to prevent content overlap */
+}
+
+/* Ensure the header adapts to Dark Mode */
+body.dark-mode .header-bar {
+  background-color: var(--button-color);
+  color: var(--button-text-color);
+}
+
+body.dark-mode .header-link {
+  color: var(--button-text-color);
+}
+
+body.dark-mode .dropdown-content a {
+  color: var(--button-text-color);
+}
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -29,12 +135,12 @@ body {
 }
 
 h1 {
-  margin: 20px 0 30px;
+  margin: 70px 0 30px; /* Adjust top margin to prevent header overlap */
   font-size: 24px;
 }
 
 h2 {
-  margin: 20px 0; /* Ensure 20px space below all H2 elements */
+  margin: 30px 0; /* Ensure 20px space below all H2 elements */
   font-size: 20px;
 }
 
@@ -49,7 +155,7 @@ h2 {
 
 .category-container {
   display: grid;
-  grid-gap: 10px; /* Reduced gap for iOS/mobile */
+  grid-gap: 10px; /* gap between buttons for iOS/mobile */
   margin-bottom: 65px;
   justify-content: center;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Flexible layout */
@@ -60,7 +166,7 @@ h2 {
   background-color: var(--button-color);
   border: 2px solid var(--button-outline-color); /* Outline colour based on theme */
   border-radius: 10px;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: bold;
   cursor: pointer;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
@@ -71,9 +177,9 @@ h2 {
   align-items: center; /* Vertically centre text */
   justify-content: center; /* Horizontally centre text */
   width: 100%; /* Button will scale with grid layout */
-  height: auto; /* Auto-height unless overridden */
+  height: auto;
   max-width: 150px; /* Max width for mobile layouts */
-  min-height: 50px; /* Ensure a minimum height */
+  min-height: 50px; 
   text-align: center;
 }
 
@@ -83,7 +189,7 @@ h2 {
 }
 .sound-button {
   height: 100%; /* Ensures all buttons take up equal height */
-  min-height: 70px; /* Minimum height to prevent collapsing */
+  min-height: 56px; /* Minimum height to prevent collapsing */
 }
 
 /* Hover and Active Effects */
@@ -159,14 +265,14 @@ footer a:hover {
 /* Desktop-specific tweaks */
 @media (min-width: 769px) {
   .category-container {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* 200px buttons with flexible centring */
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Dynamic number of columns based on available space */
     padding: 0 50px; /* Allow sufficient horizontal padding for centring */
     justify-items: center; /* Centre buttons horizontally */
     grid-gap: 20px; /* Ensure 20px space between buttons */
   }
 
   .sound-button {
-    width: 200px; /* Fixed width for desktop */
-    height: 200px; /* Fixed height for desktop */
+    width: 100%; /* Ensure the buttons fill their column evenly */
+    height: auto; /* Allow the height to adjust based on content */
   }
 }
