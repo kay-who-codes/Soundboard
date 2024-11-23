@@ -23,6 +23,7 @@ const stopCurrentAudio = () => {
   }
   if (currentButton) {
     currentButton.textContent = currentButton.getAttribute("data-original-text"); // Revert text
+    currentButton.classList.remove("flash"); // Remove any flash effect
   }
 };
 
@@ -77,26 +78,42 @@ const generateButtons = (categories) => {
 
 // Fetch and sort the list of sounds from categories
 const categories = {
-  "🤡 Meme": [
-    "Ain't Got Time.mp3", "Another one.mp3", "Are you sure.mp3", 
-    "Curb your enthusiasm.mp3", "Daaamn.mp3", "Deez Nuts.mp3", 
-    "Dun, Dun, DUUUNNNNN.mp3", "ha, gay.mp3", "Immeasurable Disappointment .m4a", 
-    "John Cena.mp3", "You a Gay.mp3", "OHHHH.m4a", 
-    "sad violin.mp3", "snore.mp3", "Stop it.m4a", "Surprise .mp3" 
-  ].sort(),
-
   "🎲 General": [
     "airhorn.mp3", "applause.mp3", "Badum Tss.mp3", "Fail Horn.mp3", 
     "Fail Tuba.mp3", "Glass breaking.mp3", "Goofy car horn.mp3", 
     "laugh.mp3", "Mouse click.mp3", "Munch.mp3", "Notification.mp3", 
     "Punch.mp3", "Record scratch.mp3", "Splat.mp3", "Suspense.mp3", 
     "Whip.mp3", "Windows Error.mp3", "wrong answer.mp3"
-  ].sort(),
+  ].sort((a, b) => a.localeCompare(b)),
+
+  "🤡 Meme": [
+    "Ain't Got Time.mp3", "Another one.mp3", "Are you sure.mp3", 
+    "Curb your enthusiasm.mp3", "Daaamn.mp3", "Deez Nuts.mp3", 
+    "Dun, Dun, DUUUNNNNN.mp3", "ha, gay.mp3", "Immeasurable Disappointment.m4a", 
+    "John Cena.mp3", "You a Gay.mp3", "OHHHH.m4a", 
+    "sad violin.mp3", "snore.mp3", "Stop it.m4a", "Surprise.mp3" 
+  ].sort((a, b) => a.localeCompare(b)),
 
   "🎬 Media": [
     "Batman Transition.mp3", "Exclamation.mp3", "Inception.mp3", 
     "Law & Order.mp3", "Violin Screech.mp3", "Wilhelm scream.mp3"
-  ].sort()
+  ].sort((a, b) => a.localeCompare(b)),
 };
 
+// Call the function to generate the sound buttons
 generateButtons(categories);
+
+// DARK MODE / LIGHT MODE TOGGLE FUNCTIONALITY
+const themeSwitch = document.getElementById("themeSwitch");
+
+// Add event listener for the theme switch toggle
+themeSwitch.addEventListener("change", () => {
+  document.body.classList.toggle("dark-mode");
+});
+
+// MOBILE DROPDOWN TOGGLE FUNCTIONALITY
+const dropdownButton = document.querySelector('.dropbtn');
+dropdownButton.addEventListener('click', () => {
+  const dropdown = document.querySelector('.dropdown');
+  dropdown.classList.toggle('open');
+});
