@@ -25,7 +25,7 @@ body.dark-mode {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background-color: #ddd;
+  background-color: #ff780024;
   color: var(--text-color);
   top: 0;
   left: 0;
@@ -68,6 +68,12 @@ body.dark-mode {
   background-color: var(--button-outline-color);
 }
 
+/* Dropdown on Hover - Visible on Hovering */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Dropdown Content */
 .dropdown-content {
   display: none;
   position: absolute;
@@ -88,8 +94,10 @@ body.dark-mode {
   width: 100%; /* Ensure links take up full width of dropdown */
 }
 
+/* Hover effect for dropdown items */
 .dropdown-content a:hover {
-  color: blue; /* Change text color to blue instead of background turning black */
+  color: #007bff; /* Change text color to blue in light mode */
+  background-color: transparent; /* Prevent background from changing */
 }
 
 /* Mobile Dropdown Toggle */
@@ -121,6 +129,17 @@ body.dark-mode .header-link {
 
 body.dark-mode .dropdown-content a {
   color: var(--button-text-color);
+}
+
+/* Ensure dropdown links are fully readable */
+.dropdown-content a {
+  white-space: nowrap; /* Prevent text from wrapping */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dropdown-content a:active {
+  background-color: transparent; /* No background when the item is clicked */
 }
 
 body {
