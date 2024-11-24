@@ -32,8 +32,6 @@ body.dark-mode {
   align-items: center;
   padding: 10px 20px;
   background-color: var(--header-barbackground-color);
-  border: 2px solid var(--header-bar-outline-color);
-  border-radius: 3px;
   color: var(--text-color);
   top: 0;
   left: 0;
