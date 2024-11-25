@@ -98,18 +98,18 @@ const categories = {
 
   "🎮 Gaming": [
     "Achievement Unlocked.mp3", "Game Over.mp3", "Get Over Here.mp3",
-    "Mario Power Up.mp3", "Minecraft Injury.m4a", "Wasted.mp3"
+    "Mario Power Up.mp3", "Minecraft Injury.m4a", "Wasted.mp3", "Exclamation.mp3",
   ].sort((a, b) => a.localeCompare(b)),
 
   "🎬 TV & Film": [
-    "Batman Transition.mp3", "Countdown.mp3", "Exclamation.mp3", "Inception.mp3", 
+    "Batman Transition.mp3", "Countdown.mp3", "Inception.mp3", 
     "Law & Order.mp3", "Violin Screech.mp3", "Wilhelm scream.mp3", "Hasta La Vista Baby.mp3",
     "I’ll Be Back.mp3", "NOOOO.mp3", "Nein!.mp3", "That is numberwang.mp3",
     "You Shall Not Pass.mp3"
   ].sort((a, b) => a.localeCompare(b)),
 
   "💨 Farts": [
-    "All-Round Fart.mp3", "Deeper Fart.mp3", "Extended Fart.mp3", "Microfart .mp3",
+    "All-Round Fart.mp3", "Deeper Fart.mp3", "Extended Fart.mp3", "Microfart.mp3",
     "Minifart.mp3", "Shot Fart.mp3", "Wet Fart.mp3", "deep fart.mp3", "quick fart.mp3"
   ].sort((a, b) => a.localeCompare(b)),
 
