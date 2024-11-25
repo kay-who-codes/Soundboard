@@ -7,6 +7,10 @@
   --button-text-color: #000000;
   --header-button-flash-colour: #e9e9e9;
   --flash-color: lightgreen;
+  --header-bar-outline-color: lightgrey;
+  --header-barbackground-color: #ffffff;
+  --old-header-barbackground-color: #ff780024;
+
 }
 
 body.dark-mode {
@@ -16,6 +20,7 @@ body.dark-mode {
   --button-outline-color: #737373;
   --button-text-color: #ffffff;
   --flash-color: #595959;
+  --header-bar-outline-color: darkgrey;
 }
 
 /* General Styles */
@@ -26,7 +31,7 @@ body.dark-mode {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background-color: #ff780024;
+  background-color: var(--header-barbackground-color);
   color: var(--text-color);
   top: 0;
   left: 0;
