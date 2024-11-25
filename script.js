@@ -134,14 +134,14 @@ themeSwitch.addEventListener("change", () => {
 const dropdownButton = document.querySelector('.dropbtn');
 const dropdown = document.querySelector('.dropdown');
 
-dropdownButton.addEventListener('click', () => {
-  dropdown.classList.toggle('open');
+dropdownButton.addEventListener('click', (event) => {
+  event.stopPropagation(); // Prevent click from bubbling up to document
+  dropdown.classList.toggle('open'); // Toggle dropdown open/close
 });
 
 // Close dropdown if clicking outside of it
 document.addEventListener('click', (event) => {
-  if (!dropdown.contains(event.target) && !dropdownButton.contains(event.target)) {
-    dropdown.classList.remove('open');
+  if (!dropdown.contains(event.target) && dropdown.classList.contains('open')) {
+    dropdown.classList.remove('open'); // Remove 'open' if outside click
   }
 });
-
