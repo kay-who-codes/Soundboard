@@ -114,7 +114,7 @@ const categories = {
   ].sort((a, b) => a.localeCompare(b)),
 
   "🐾 Animals": [
-    "Crow.mp3", "Dog Growl & Bark.mp3", "Meow 2.mp3", "Meow.mp3", "Rooster.mp3"
+    "Crow.mp3", "Dog Growl & Bark.mp3", "Meow 2.mp3", "Meow.mp3", "Rooster.mp3",
     "Screaming Goat.mp3"
   ].sort((a, b) => a.localeCompare(b)),
 };
