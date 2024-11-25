@@ -83,20 +83,39 @@ const categories = {
     "Fail Tuba.mp3", "Glass breaking.mp3", "Goofy car horn.mp3", 
     "laugh.mp3", "Mouse click.mp3", "Munch.mp3", "Notification.mp3", 
     "Punch.mp3", "Record scratch.mp3", "Splat.mp3", "Suspense.mp3", 
-    "Whip.mp3", "Windows Error.mp3", "wrong answer.mp3"
+    "Whip.mp3", "Windows Error.mp3", "wrong answer.mp3", "Gasp.MP3",
+    "Train Whistle.mp3", "Unzip.mp3"
   ].sort((a, b) => a.localeCompare(b)),
 
   "🤡 Meme": [
-    "Ain't Got Time.mp3", "Another one.mp3", "Are you sure.mp3", 
+    "Ain't Got Time.mp3", "Another one.mp3", "Are you sure.mp3", "Bruh.mp3",
     "Curb your enthusiasm.mp3", "Daaamn.mp3", "Deez Nuts.mp3", 
     "Dun, Dun, DUUUNNNNN.mp3", "ha, gay.mp3", "Immeasurable Disappointment.m4a", 
-    "John Cena.mp3", "You a Gay.mp3", "OHHHH.m4a", 
-    "sad violin.mp3", "snore.mp3", "Stop it.m4a", "Surprise.mp3" 
+    "John Cena.mp3", "You a Gay.mp3", "OHHHH.m4a", "Noice.mp3",
+    "sad violin.mp3", "snore.mp3", "Stop it.m4a", "Surprise.mp3",
+    "The more you know.m4a"
   ].sort((a, b) => a.localeCompare(b)),
 
-  "🎬 Media": [
-    "Batman Transition.mp3", "Exclamation.mp3", "Inception.mp3", 
-    "Law & Order.mp3", "Violin Screech.mp3", "Wilhelm scream.mp3"
+  "🎮 Gaming": [
+    "Achievement Unlocked.mp3", "Game Over.mp3", "Get Over Here.mp3",
+    "Mario Power Up.mp3", "Minecraft Injury.m4a", "Wasted.mp3"
+  ].sort((a, b) => a.localeCompare(b)),
+
+  "🎬 TV & Film": [
+    "Batman Transition.mp3", "Countdown.mp3", "Exclamation.mp3", "Inception.mp3", 
+    "Law & Order.mp3", "Violin Screech.mp3", "Wilhelm scream.mp3", "Hasta La Vista Baby.mp3",
+    "I’ll Be Back.mp3", "NOOOO.mp3", "Nein!.mp3", "That is numberwang.mp3",
+    "You Shall Not Pass.mp3"
+  ].sort((a, b) => a.localeCompare(b)),
+
+  "💨 Farts": [
+    "All-Round Fart.mp3", "Deeper Fart.mp3", "Extended Fart.mp3", "Microfart .mp3",
+    "Minifart.mp3", "Shot Fart.mp3", "Wet Fart.mp3", "deep fart.mp3", "quick fart.mp3"
+  ].sort((a, b) => a.localeCompare(b)),
+
+  "🐾 Animals": [
+    "Crow.mp3", "Dog Growl & Bark.mp3", "Meow 2.mp3", "Meow.mp3", "Rooster.mp3"
+    "Screaming Goat.mp3"
   ].sort((a, b) => a.localeCompare(b)),
 };
 
