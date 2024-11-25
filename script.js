@@ -132,7 +132,16 @@ themeSwitch.addEventListener("change", () => {
 
 // MOBILE DROPDOWN TOGGLE FUNCTIONALITY
 const dropdownButton = document.querySelector('.dropbtn');
+const dropdown = document.querySelector('.dropdown');
+
 dropdownButton.addEventListener('click', () => {
-  const dropdown = document.querySelector('.dropdown');
   dropdown.classList.toggle('open');
 });
+
+// Close dropdown if clicking outside of it
+document.addEventListener('click', (event) => {
+  if (!dropdown.contains(event.target) && !dropdownButton.contains(event.target)) {
+    dropdown.classList.remove('open');
+  }
+});
+
