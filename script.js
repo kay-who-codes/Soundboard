@@ -83,7 +83,7 @@ const categories = {
     "Fail Tuba.mp3", "Glass breaking.mp3", "Goofy car horn.mp3", 
     "laugh.mp3", "Mouse click.mp3", "Munch.mp3", "Notification.mp3", 
     "Punch.mp3", "Record scratch.mp3", "Splat.mp3", "Suspense.mp3", 
-    "Whip.mp3", "Windows Error.mp3", "wrong answer.mp3", "Gasp.MP3",
+    "Whip.mp3", "Windows Error.mp3", "wrong answer.mp3", "Gasp.mp3",
     "Train Whistle.mp3", "Unzip.mp3"
   ].sort((a, b) => a.localeCompare(b)),
 
