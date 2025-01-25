@@ -23,7 +23,6 @@ const stopCurrentAudio = () => {
   }
   if (currentButton) {
     currentButton.textContent = currentButton.getAttribute("data-original-text"); // Revert text
-    currentButton.classList.remove("flash"); // Remove any flash effect
   }
 };
 
@@ -48,13 +47,14 @@ const generateButtons = (categories) => {
 
       // Add click event to play/stop the corresponding sound
       button.addEventListener("click", () => {
-        if (currentAudio && currentAudio.src.endsWith(file) && !currentAudio.paused) {
+        const encodedFile = encodeURIComponent(file); // Encode spaces as %20
+        if (currentAudio && currentAudio.src.endsWith(encodedFile) && !currentAudio.paused) {
           // If the same button is pressed and the sound is playing, stop it
           stopCurrentAudio();
         } else {
           // Otherwise, stop any current sound and play the new one
           stopCurrentAudio();
-          const audio = new Audio(`sounds/${file}`);
+          const audio = new Audio(`sounds/${encodedFile}`); // Use the encoded file name
           currentAudio = audio;
           currentButton = button;
           button.textContent = "⏸️"; // Show pause icon while sound is playing
@@ -130,18 +130,16 @@ themeSwitch.addEventListener("change", () => {
   document.body.classList.toggle("dark-mode");
 });
 
-// MOBILE DROPDOWN TOGGLE FUNCTIONALITY
-const dropdownButton = document.querySelector('.dropbtn');
-const dropdown = document.querySelector('.dropdown');
+// Toggle dropdown visibility
+function toggleDropdown() {
+  const dropdown = document.querySelector('.dropdown');
+  dropdown.classList.toggle('show');
+}
 
-dropdownButton.addEventListener('click', (event) => {
-  event.stopPropagation(); // Prevent click from bubbling up to document
-  dropdown.classList.toggle('open'); // Toggle dropdown open/close
-});
-
-// Close dropdown if clicking outside of it
-document.addEventListener('click', (event) => {
-  if (!dropdown.contains(event.target) && dropdown.classList.contains('open')) {
-    dropdown.classList.remove('open'); // Remove 'open' if outside click
+// Close dropdown when clicking outside
+window.addEventListener('click', (event) => {
+  const dropdown = document.querySelector('.dropdown');
+  if (!dropdown.contains(event.target)) {
+    dropdown.classList.remove('show');
   }
 });
