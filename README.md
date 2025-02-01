@@ -2,7 +2,7 @@
 
 A fun, interactive soundboard app that lets you play various sound effects at the click of a button. It offers a wide variety of sounds, from general noises to meme sound bites and gaming effects. You can also toggle between dark and light mode and use a mobile-friendly dropdown interface for easy access.
 
-![App Image](Non-App/App%20Image.png)
+[![App Image](Non-App/App%20Image.png)](https://kay-who-codes.github.io/Soundboard/)
 
 ## Features
 
