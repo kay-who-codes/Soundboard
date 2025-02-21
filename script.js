@@ -129,17 +129,3 @@ const themeSwitch = document.getElementById("themeSwitch");
 themeSwitch.addEventListener("change", () => {
   document.body.classList.toggle("dark-mode");
 });
-
-// Toggle dropdown visibility
-function toggleDropdown() {
-  const dropdown = document.querySelector('.dropdown');
-  dropdown.classList.toggle('show');
-}
-
-// Close dropdown when clicking outside
-window.addEventListener('click', (event) => {
-  const dropdown = document.querySelector('.dropdown');
-  if (!dropdown.contains(event.target)) {
-    dropdown.classList.remove('show');
-  }
-});
